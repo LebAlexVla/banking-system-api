@@ -1,4 +1,4 @@
-namespace BankingSystem.Domain.BankAccount;
+namespace BankingSystem.Domain.BankAccounts;
 
 public readonly record struct BankAccountId(long Value)
 {
