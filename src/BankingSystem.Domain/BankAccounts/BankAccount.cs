@@ -5,16 +5,12 @@ namespace BankingSystem.Domain.BankAccounts;
 
 public class BankAccount
 {
-    private readonly AccountPassword _password;
-
     private readonly List<OperationType> _operationsHistory;
 
     private Balance _balance;
 
-    public BankAccount(AccountPassword password, AccountNumber number, Balance balance, BankAccountId id)
+    public BankAccount(AccountNumber number, Balance balance, BankAccountId id)
     {
-        _password = password;
-
         Number = number;
         _balance = balance;
         Id = id;
@@ -27,11 +23,6 @@ public class BankAccount
     public AccountNumber Number { get; }
 
     public IEnumerable<OperationType> OperationsHistory => _operationsHistory;
-
-    public bool ComparePassword(string password)
-    {
-        return _password.Value == password;
-    }
 
     public Balance GetBalance()
     {
