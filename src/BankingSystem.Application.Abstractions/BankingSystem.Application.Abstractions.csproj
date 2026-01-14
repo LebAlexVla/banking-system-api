@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Folder Include="Persistence\Queries\" />
+    <Folder Include="Persistence\Repositories\" />
+  </ItemGroup>
+</Project>
