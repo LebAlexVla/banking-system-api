@@ -9,12 +9,12 @@ public class BankAccount
 
     private Balance _balance;
 
-    public BankAccount(AccountNumber number, Balance balance, BankAccountId id)
+    internal BankAccount(AccountNumber number, BankAccountId id)
     {
         Number = number;
-        _balance = balance;
         Id = id;
 
+        _balance = Balance.Default;
         _operationsHistory = [];
     }
 

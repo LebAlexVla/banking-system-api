@@ -1,5 +1,4 @@
 using BankingSystem.Domain.BankAccounts;
-using BankingSystem.Domain.BankAccounts.Results;
 using BankingSystem.Domain.Sessions.Results;
 using BankingSystem.Domain.ValueObjects;
 

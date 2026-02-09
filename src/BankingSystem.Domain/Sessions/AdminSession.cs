@@ -1,4 +1,5 @@
-using BankingSystem.Domain.Sessions.Results;
+using BankingSystem.Domain.BankAccounts;
+using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Domain.Sessions;
 
@@ -11,8 +12,8 @@ public class AdminSession
 
     public Guid SessionId { get; }
 
-    public CreateBankAccountResult CreateBankAccount()
+    public BankAccount CreateBankAccount(AccountNumber number, BankAccountId id)
     {
-        throw new NotImplementedException();
+        return new BankAccount(number, id);
     }
 }

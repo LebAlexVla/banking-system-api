@@ -12,6 +12,8 @@ public readonly record struct Balance
 
     public decimal Value { get; }
 
+    public static Balance Default => new(0);
+
     public static bool operator >(Balance left, Balance right)
         => left.Value > right.Value;
 
