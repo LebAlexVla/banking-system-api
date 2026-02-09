@@ -1,3 +1,5 @@
+using BankingSystem.Domain.Sessions.Results;
+
 namespace BankingSystem.Domain.Sessions;
 
 public class AdminSession
@@ -8,4 +10,9 @@ public class AdminSession
     }
 
     public Guid SessionId { get; }
+
+    public CreateBankAccountResult CreateBankAccount()
+    {
+        throw new NotImplementedException();
+    }
 }

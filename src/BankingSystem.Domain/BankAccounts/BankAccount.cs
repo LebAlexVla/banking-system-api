@@ -38,17 +38,17 @@ public class BankAccount
         _balance = _balance.IncreaseBy(balance);
     }
 
-    public WithdrawMoneyResult WithdrawMoney(Balance balance)
+    public WithdrawMoneyAccountResult WithdrawMoney(Balance balance)
     {
         if (_balance < balance)
         {
-            return new WithdrawMoneyResult.Failure("Not enough money");
+            return new WithdrawMoneyAccountResult.Failure("Not enough money");
         }
 
         _operationsHistory.Add(new OperationType.WithdrawMoneyOperation(_balance));
 
         _balance = _balance.DecreaseBy(balance);
 
-        return new WithdrawMoneyResult.Success();
+        return new WithdrawMoneyAccountResult.Success();
     }
 }
