@@ -4,7 +4,7 @@ namespace BankingSystem.Application.Contracts.AdminSession.Operations;
 
 public static class CreateBankAccount
 {
-    public readonly record struct Request(string Password);
+    public readonly record struct Request(string AdminSessionId, string Password);
 
     public abstract record Response
     {

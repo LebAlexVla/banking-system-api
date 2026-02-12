@@ -4,5 +4,5 @@ namespace BankingSystem.Application.Contracts.AdminSession;
 
 public interface IAdminSessionService
 {
-    CreateBankAccount.Response Create(CreateBankAccount.Request request);
+    CreateBankAccount.Response CreateBankAccount(CreateBankAccount.Request request);
 }

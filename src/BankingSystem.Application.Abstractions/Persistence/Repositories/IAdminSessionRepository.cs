@@ -7,5 +7,5 @@ public interface IAdminSessionRepository
 {
     AdminSession Save(AdminSession adminSession);
 
-    AdminSession Query(AdminSessionQuery query);
+    AdminSession? Query(AdminSessionQuery query);
 }
