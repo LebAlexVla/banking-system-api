@@ -29,7 +29,6 @@ public class AdminSessionService : IAdminSessionService
         var sessionId = Guid.Parse(request.AdminSessionId);
 
         AdminSession? adminSession = _context.AdminSession.Query(new AdminSessionQuery(sessionId));
-
         if (adminSession is null)
         {
             return new CreateBankAccount.Response.Failure("admin session not found");
@@ -37,7 +36,7 @@ public class AdminSessionService : IAdminSessionService
 
         AccountNumber accountNumber = _accountNumberGenerator.Generate();
         BankAccount bankAccount = adminSession.CreateBankAccount(accountNumber, BankAccountId.Default);
-        bankAccount = _context.BankAccountRepository.Save(bankAccount);
+        bankAccount = _context.BankAccounts.Save(bankAccount);
 
         _accountPinStorage.SetPin(accountNumber, request.PinCode);
 

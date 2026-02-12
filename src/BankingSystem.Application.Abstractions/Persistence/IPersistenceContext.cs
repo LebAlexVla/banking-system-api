@@ -6,7 +6,7 @@ public interface IPersistenceContext
 {
     IAdminSessionRepository AdminSession { get; }
 
-    IUserSessionRepository UserSessionRepository { get; }
+    IUserSessionRepository UserSessions { get; }
 
-    IBankAccountRepository BankAccountRepository { get; }
+    IBankAccountRepository BankAccounts { get; }
 }

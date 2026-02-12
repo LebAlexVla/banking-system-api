@@ -29,7 +29,7 @@ public class UserSessionCreateService : IUserSessionCreateService
             return new CreateUserSession.Response.Failure("Invalid pin code or account number");
         }
 
-        BankAccount? bankAccount = _context.BankAccountRepository
+        BankAccount? bankAccount = _context.BankAccounts
             .Query(new BankAccountNumberQuery([accountNumber])).FirstOrDefault();
         if (bankAccount == null)
         {
@@ -38,7 +38,7 @@ public class UserSessionCreateService : IUserSessionCreateService
 
         var userSessionId = Guid.NewGuid();
         var userSession = new UserSession(userSessionId, bankAccount.Id);
-        userSession = _context.UserSessionRepository.Save(userSession);
+        userSession = _context.UserSessions.Save(userSession);
 
         return new CreateUserSession.Response.Success(new UserSessionDto(userSessionId.ToString()));
     }
