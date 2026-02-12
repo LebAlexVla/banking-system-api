@@ -2,7 +2,7 @@ using BankingSystem.Application.Contracts.AdminSession.Operations;
 
 namespace BankingSystem.Application.Contracts.AdminSession;
 
-public interface IAdminSessionCreator
+public interface IAdminSessionService
 {
-    CreateAdminSession.Response Create(CreateAdminSession.Request request);
+    CreateBankAccount.Response Create(CreateBankAccount.Request request);
 }
