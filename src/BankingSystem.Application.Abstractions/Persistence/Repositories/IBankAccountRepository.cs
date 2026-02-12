@@ -7,5 +7,7 @@ public interface IBankAccountRepository
 {
     BankAccount Save(BankAccount bankAccount);
 
-    IEnumerable<BankAccount> Query(BankAccountQuery query);
+    IEnumerable<BankAccount> Query(BankAccountIdQuery query);
+
+    IEnumerable<BankAccount> Query(BankAccountNumberQuery query);
 }

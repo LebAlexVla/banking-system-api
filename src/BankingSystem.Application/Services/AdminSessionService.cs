@@ -1,3 +1,4 @@
+using BankingSystem.Application.Abstractions.Authentication.UserAuthentication;
 using BankingSystem.Application.Abstractions.Generation;
 using BankingSystem.Application.Abstractions.Persistence;
 using BankingSystem.Application.Abstractions.Persistence.Queries;
@@ -14,11 +15,13 @@ public class AdminSessionService : IAdminSessionService
 {
     private readonly IPersistenceContext _context;
     private readonly IAccountNumberGenerator _accountNumberGenerator;
+    private readonly IBankAccountPinStorage _accountPinStorage;
 
-    public AdminSessionService(IPersistenceContext context, IAccountNumberGenerator accountNumberGenerator)
+    public AdminSessionService(IPersistenceContext context, IAccountNumberGenerator accountNumberGenerator, IBankAccountPinStorage accountPinStorage)
     {
         _context = context;
         _accountNumberGenerator = accountNumberGenerator;
+        _accountPinStorage = accountPinStorage;
     }
 
     public CreateBankAccount.Response CreateBankAccount(CreateBankAccount.Request request)
@@ -35,6 +38,8 @@ public class AdminSessionService : IAdminSessionService
         AccountNumber accountNumber = _accountNumberGenerator.Generate();
         BankAccount bankAccount = adminSession.CreateBankAccount(accountNumber, BankAccountId.Default);
         bankAccount = _context.BankAccountRepository.Save(bankAccount);
+
+        _accountPinStorage.SetPin(accountNumber, request.PinCode);
 
         return new CreateBankAccount.Response.Success(bankAccount.MapToDto());
     }

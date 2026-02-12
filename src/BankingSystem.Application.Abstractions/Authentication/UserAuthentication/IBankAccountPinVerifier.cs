@@ -1,0 +1,8 @@
+using BankingSystem.Domain.ValueObjects;
+
+namespace BankingSystem.Application.Abstractions.Authentication.UserAuthentication;
+
+public interface IBankAccountPinVerifier
+{
+    bool Verify(AccountNumber accountNumber, long pin);
+}

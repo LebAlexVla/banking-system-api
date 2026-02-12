@@ -30,6 +30,6 @@ public class AdminSessionCreateService : IAdminSessionCreateService
         var adminSession = new AdminSession(adminSessionId);
         _persistenceContext.AdminSession.Save(adminSession);
 
-        return new CreateAdminSession.Response.Success(new AdminSessionDto(adminSession.ToString()));
+        return new CreateAdminSession.Response.Success(new AdminSessionDto(adminSessionId.ToString()));
     }
 }
