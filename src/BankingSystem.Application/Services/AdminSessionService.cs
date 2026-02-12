@@ -1,3 +1,4 @@
+using BankingSystem.Application.Abstractions.Generation;
 using BankingSystem.Application.Abstractions.Persistence;
 using BankingSystem.Application.Abstractions.Persistence.Queries;
 using BankingSystem.Application.Contracts.AdminSession;
@@ -5,16 +6,19 @@ using BankingSystem.Application.Contracts.AdminSession.Operations;
 using BankingSystem.Application.Mapping;
 using BankingSystem.Domain.BankAccounts;
 using BankingSystem.Domain.Sessions;
+using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Application.Services;
 
 public class AdminSessionService : IAdminSessionService
 {
     private readonly IPersistenceContext _context;
+    private readonly IAccountNumberGenerator _accountNumberGenerator;
 
-    public AdminSessionService(IPersistenceContext context)
+    public AdminSessionService(IPersistenceContext context, IAccountNumberGenerator accountNumberGenerator)
     {
         _context = context;
+        _accountNumberGenerator = accountNumberGenerator;
     }
 
     public CreateBankAccount.Response CreateBankAccount(CreateBankAccount.Request request)
@@ -28,7 +32,8 @@ public class AdminSessionService : IAdminSessionService
             return new CreateBankAccount.Response.Failure("admin session not found");
         }
 
-        BankAccount bankAccount = adminSession.CreateBankAccount();
+        AccountNumber accountNumber = _accountNumberGenerator.Generate();
+        BankAccount bankAccount = adminSession.CreateBankAccount(accountNumber, BankAccountId.Default);
         bankAccount = _context.BankAccountRepository.Save(bankAccount);
 
         return new CreateBankAccount.Response.Success(bankAccount.MapToDto());
