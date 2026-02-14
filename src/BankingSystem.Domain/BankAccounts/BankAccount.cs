@@ -9,7 +9,7 @@ public class BankAccount
 
     private Balance _balance;
 
-    internal BankAccount(AccountNumber number, BankAccountId id)
+    public BankAccount(AccountNumber number, BankAccountId id)
     {
         Number = number;
         Id = id;

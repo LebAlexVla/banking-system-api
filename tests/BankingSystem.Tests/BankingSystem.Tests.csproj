@@ -11,8 +11,14 @@
     <ItemGroup>
         <PackageReference Include="coverlet.collector"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Include="NSubstitute" />
         <PackageReference Include="xunit"/>
         <PackageReference Include="xunit.runner.visualstudio"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\banking-system\Application\BankingSystem.Application.Abstractions\BankingSystem.Application.Abstractions.csproj" />
+      <ProjectReference Include="..\..\src\banking-system\Application\BankingSystem.Application\BankingSystem.Application\BankingSystem.Application.csproj" />
     </ItemGroup>
 
 </Project>
