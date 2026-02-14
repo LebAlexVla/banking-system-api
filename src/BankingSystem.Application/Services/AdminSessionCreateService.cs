@@ -1,4 +1,4 @@
-using BankingSystem.Application.Abstractions.Authentication.AdminAuthentication;
+using BankingSystem.Application.Abstractions.Authentication;
 using BankingSystem.Application.Abstractions.Persistence;
 using BankingSystem.Application.Contracts.AdminSession;
 using BankingSystem.Application.Contracts.AdminSession.Models;
@@ -9,19 +9,18 @@ namespace BankingSystem.Application.Services;
 
 public class AdminSessionCreateService : IAdminSessionCreateService
 {
-    private readonly IAdminAuthenticationContext _adminAuthenticationContext;
+    private readonly IAdminPasswordVerifier _adminPasswordVerifier;
     private readonly IPersistenceContext _persistenceContext;
 
-    public AdminSessionCreateService(IAdminAuthenticationContext adminAuthenticationContext, IPersistenceContext persistenceContext)
+    public AdminSessionCreateService(IPersistenceContext persistenceContext, IAdminPasswordVerifier adminPasswordVerifier)
     {
-        _adminAuthenticationContext = adminAuthenticationContext;
         _persistenceContext = persistenceContext;
+        _adminPasswordVerifier = adminPasswordVerifier;
     }
 
     public CreateAdminSession.Response Create(CreateAdminSession.Request request)
     {
-        string passwordHash = _adminAuthenticationContext.PasswordHashProvider.GetPasswordHash();
-        if (!_adminAuthenticationContext.PasswordVerifier.Verify(passwordHash, request.Password))
+        if (!_adminPasswordVerifier.Verify(request.Password))
         {
             return new CreateAdminSession.Response.Failure("Invalid admin password");
         }
