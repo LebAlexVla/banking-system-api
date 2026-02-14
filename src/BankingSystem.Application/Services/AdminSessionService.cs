@@ -1,5 +1,4 @@
 using BankingSystem.Application.Abstractions.Authentication;
-using BankingSystem.Application.Abstractions.Generation;
 using BankingSystem.Application.Abstractions.Persistence;
 using BankingSystem.Application.Abstractions.Persistence.Queries;
 using BankingSystem.Application.Contracts.AdminSession;

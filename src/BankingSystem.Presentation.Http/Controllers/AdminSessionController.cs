@@ -34,9 +34,9 @@ public sealed class AdminSessionController : ControllerBase
     }
 
     [HttpPost("session/account")]
-    public ActionResult<BankAccountDto> CreateAccount(string adminSessionId, long accountNumber, long pinCode)
+    public ActionResult<BankAccountDto> CreateAccount(string adminSessionId, long pinCode)
     {
-        var request = new CreateBankAccount.Request(adminSessionId, accountNumber, pinCode);
+        var request = new CreateBankAccount.Request(adminSessionId, pinCode);
         CreateBankAccount.Response response = _adminSessionService.CreateBankAccount(request);
 
         return response switch

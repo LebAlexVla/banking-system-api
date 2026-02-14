@@ -1,5 +1,4 @@
 using BankingSystem.Application.Abstractions.Authentication;
-using BankingSystem.Application.Abstractions.Generation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BankingSystem.Infrastructure.Authentication;

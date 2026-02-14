@@ -1,5 +1,5 @@
 using BankingSystem.Application.Abstractions.Authentication;
-using BankingSystem.Configuration;
+using BankingSystem.Infrastructure.Authentication.Configuration;
 using Microsoft.Extensions.Options;
 
 namespace BankingSystem.Infrastructure.Authentication;

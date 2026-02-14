@@ -1,4 +1,4 @@
-namespace BankingSystem.Configuration;
+namespace BankingSystem.Infrastructure.Authentication.Configuration;
 
 public class SystemOptions
 {

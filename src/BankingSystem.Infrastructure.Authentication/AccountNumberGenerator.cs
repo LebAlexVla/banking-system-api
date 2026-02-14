@@ -1,4 +1,4 @@
-using BankingSystem.Application.Abstractions.Generation;
+using BankingSystem.Application.Abstractions.Authentication;
 using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Infrastructure.Authentication;

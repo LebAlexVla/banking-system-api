@@ -1,6 +1,6 @@
 using BankingSystem.Domain.ValueObjects;
 
-namespace BankingSystem.Application.Abstractions.Generation;
+namespace BankingSystem.Application.Abstractions.Authentication;
 
 public interface IAccountNumberGenerator
 {

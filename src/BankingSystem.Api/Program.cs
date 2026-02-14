@@ -1,6 +1,6 @@
 using BankingSystem.Application;
-using BankingSystem.Configuration;
 using BankingSystem.Infrastructure.Authentication;
+using BankingSystem.Infrastructure.Authentication.Configuration;
 using BankingSystem.Infrastructure.Persistence;
 using BankingSystem.Presentation.Http;
 
