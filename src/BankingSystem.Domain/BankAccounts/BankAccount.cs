@@ -18,7 +18,7 @@ public class BankAccount
         _operationsHistory = [];
     }
 
-    public BankAccountId Id { get; }
+    public BankAccountId Id { get; set; }
 
     public AccountNumber Number { get; }
 
