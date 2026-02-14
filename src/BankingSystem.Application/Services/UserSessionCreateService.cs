@@ -10,7 +10,7 @@ using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Application.Services;
 
-public class UserSessionCreateService : IUserSessionCreateService
+internal class UserSessionCreateService : IUserSessionCreateService
 {
     private readonly IPersistenceContext _context;
     private readonly IBankAccountPinVerifier _pinVerifier;

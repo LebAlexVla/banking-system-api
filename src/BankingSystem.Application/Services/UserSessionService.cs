@@ -10,7 +10,7 @@ using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Application.Services;
 
-public class UserSessionService : IUserSessionService
+internal class UserSessionService : IUserSessionService
 {
     private readonly IPersistenceContext _context;
 

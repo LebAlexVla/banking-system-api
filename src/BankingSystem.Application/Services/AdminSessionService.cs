@@ -11,7 +11,7 @@ using BankingSystem.Domain.ValueObjects;
 
 namespace BankingSystem.Application.Services;
 
-public class AdminSessionService : IAdminSessionService
+internal class AdminSessionService : IAdminSessionService
 {
     private readonly IPersistenceContext _context;
     private readonly IAccountNumberGenerator _accountNumberGenerator;

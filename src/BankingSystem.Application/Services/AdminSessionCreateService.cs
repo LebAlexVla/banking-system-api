@@ -7,7 +7,7 @@ using BankingSystem.Domain.Sessions;
 
 namespace BankingSystem.Application.Services;
 
-public class AdminSessionCreateService : IAdminSessionCreateService
+internal class AdminSessionCreateService : IAdminSessionCreateService
 {
     private readonly IAdminPasswordVerifier _adminPasswordVerifier;
     private readonly IPersistenceContext _persistenceContext;
