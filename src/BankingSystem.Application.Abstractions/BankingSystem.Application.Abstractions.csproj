@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\BankingSystem.Domain\BankingSystem.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SourceKit.Generators.Builder.Annotations" />
+  </ItemGroup>
+</Project>
