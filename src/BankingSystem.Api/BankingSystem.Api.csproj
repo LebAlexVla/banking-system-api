@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Application\BankingSystem.Application\BankingSystem.Application\BankingSystem.Application.csproj" />
-      <ProjectReference Include="..\Infrastructure\BankingSystem.Infrastructure.Authentication\BankingSystem.Infrastructure.Authentication\BankingSystem.Infrastructure.Authentication.csproj" />
-      <ProjectReference Include="..\Infrastructure\BankingSystem.Infrastructure.Persistence\BankingSystem.Infrastructure.Persistence\BankingSystem.Infrastructure.Persistence.csproj" />
-      <ProjectReference Include="..\Presentation\BankingSystem.Presentation.Http\BankingSystem.Presentation.Http\BankingSystem.Presentation.Http.csproj" />
+        <ProjectReference Include="..\BankingSystem.Application\BankingSystem.Application.csproj" />
+        <ProjectReference Include="..\BankingSystem.Infrastructure.Authentication\BankingSystem.Infrastructure.Authentication.csproj" />
+        <ProjectReference Include="..\BankingSystem.Infrastructure.Persistence\BankingSystem.Infrastructure.Persistence.csproj" />
+        <ProjectReference Include="..\BankingSystem.Presentation.Http\BankingSystem.Presentation.Http.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Swashbuckle.AspNetCore" />
+        <PackageReference Include="Swashbuckle.AspNetCore" />
     </ItemGroup>
 
 </Project>

@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace BankingSystem.Presentation.Http;
 
 public static class ServiceCollectionExtensions
